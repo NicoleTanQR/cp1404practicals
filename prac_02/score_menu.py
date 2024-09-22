@@ -2,6 +2,12 @@
 Practical 2 - Menu
 """
 
+# from score import determine_evaluation
+
+MINIMUM_THRESHOLD = 0
+MAXIMUM_THRESHOLD = 100
+EXCELLENT_THRESHOLD = 90
+PASSABLE_THRESHOLD = 50
 MENU = """(G)et a valid score
 (P)rint result
 (S)how stars
@@ -10,21 +16,46 @@ MENU = """(G)et a valid score
 
 def main():
     """Display evaluation or a number of asterisks based on a valid input score."""
-    pass
+    score = get_valid_score("Enter score: ")
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "G":
-            pass
+            score = get_valid_score("Enter score: ")
         elif choice == "P":
-            pass
+            print(determine_evaluation(score))
         elif choice == "S":
-            pass
+            print_star_line(score)
         else:
             print("Invalid option")
         print(MENU)
         choice = input(">>> ").upper()
     print("Farewell")
+
+
+def get_valid_score(prompt):
+    """Get a valid score."""
+    score = int(input(prompt))
+    while determine_evaluation(score) == "Invalid score":
+        print("Invalid score")
+        score = int(input(prompt))
+    return score
+
+
+def determine_evaluation(score):
+    """Determine evaluation for score."""
+    if score < MINIMUM_THRESHOLD or score > MAXIMUM_THRESHOLD:
+        return "Invalid score"
+    if score >= EXCELLENT_THRESHOLD:
+        return "Excellent"
+    if score >= PASSABLE_THRESHOLD:
+        return "Passable"
+    return "Bad"
+
+
+def print_star_line(score):
+    """Print as many asterisks as score."""
+    print("*" * score)
 
 
 main()
