@@ -2,8 +2,6 @@
 Practical 2 - Menu
 """
 
-# from score import determine_evaluation
-
 MINIMUM_THRESHOLD = 0
 MAXIMUM_THRESHOLD = 100
 EXCELLENT_THRESHOLD = 90
@@ -35,17 +33,15 @@ def main():
 
 def get_valid_score(prompt):
     """Get a valid score."""
-    score = int(input(prompt))
-    while determine_evaluation(score) == "Invalid score":
+    score = float(input(prompt))
+    while score < MINIMUM_THRESHOLD or score > MAXIMUM_THRESHOLD:
         print("Invalid score")
-        score = int(input(prompt))
+        score = float(input(prompt))
     return score
 
 
 def determine_evaluation(score):
     """Determine evaluation for score."""
-    if score < MINIMUM_THRESHOLD or score > MAXIMUM_THRESHOLD:
-        return "Invalid score"
     if score >= EXCELLENT_THRESHOLD:
         return "Excellent"
     if score >= PASSABLE_THRESHOLD:
@@ -55,7 +51,7 @@ def determine_evaluation(score):
 
 def print_star_line(score):
     """Print as many asterisks as score."""
-    print("*" * score)
+    print("*" * int(score))
 
 
 main()
