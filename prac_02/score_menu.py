@@ -1,6 +1,4 @@
-"""
-Practical 2 - Menu
-"""
+"""Practical 2 - Menu"""
 
 MINIMUM_THRESHOLD = 0
 MAXIMUM_THRESHOLD = 100
