@@ -15,7 +15,7 @@ def main():
     """Display evaluations for input score and random score."""
     score = float(input("Enter score: "))
     print(determine_evaluation(score))
-    print(determine_evaluation(random.randint(MINIMUM_THRESHOLD, MAXIMUM_THRESHOLD)))
+    print(determine_evaluation(random.uniform(MINIMUM_THRESHOLD, MAXIMUM_THRESHOLD)))
 
 
 def determine_evaluation(score):
