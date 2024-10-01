@@ -14,7 +14,7 @@ Yes
 try:
     numerator = int(input("Enter the numerator: "))
     denominator = int(input("Enter the denominator: "))
-    while denominator == 0:
+    while denominator <= 0:
         print("Denominator must not be zero!")
         denominator = int(input("Enter the denominator: "))
     fraction = numerator / denominator
