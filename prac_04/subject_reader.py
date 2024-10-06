@@ -9,6 +9,7 @@ FILENAME = "subject_data.txt"
 def main():
     data = load_data()
     print(data)
+    display_data_sentences(data)
 
 
 def load_data():
@@ -22,6 +23,13 @@ def load_data():
         data.append(parts)
     input_file.close()
     return data
+
+
+def display_data_sentences(data):
+    """Display sentence based on data."""
+    for parts in data:
+        print(f"{parts[0]} is taught by {parts[1]:12} and has "
+              f"{parts[2]:3} students")
 
 
 main()
