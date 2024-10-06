@@ -7,6 +7,7 @@ FILENAME = "subject_data.txt"
 
 
 def main():
+    """Display data from file using lists."""
     data = load_data()
     print(data)
     display_data_sentences(data)
