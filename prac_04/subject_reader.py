@@ -29,8 +29,11 @@ def load_data():
 def display_data_sentences(data):
     """Display sentence based on data."""
     for parts in data:
-        print(f"{parts[0]} is taught by {parts[1]:12} and has "
-              f"{parts[2]:3} students")
+        subject, name, number_of_students = parts
+        name_width = max((len(parts[1]) for parts in data))
+        number_of_students_width = max((len(str(parts[2])) for parts in data))
+        print(f"{subject} is taught by {name:{name_width}} and has "
+              f"{number_of_students:{number_of_students_width}} students")
 
 
 main()
