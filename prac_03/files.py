@@ -16,10 +16,12 @@ print(f"Hi {name}!")
 
 # 3.
 FILENAME = "numbers.txt"
+total = 0
 with open(FILENAME) as in_file:
-    first_number = int(in_file.readline())
-    second_number = int(in_file.readline())
-print(first_number + second_number)
+    for i in range(0, 2):
+        number = in_file.readline()
+        total = total + int(number)
+print(total)
 
 # 4.
 FILENAME = "numbers.txt"
