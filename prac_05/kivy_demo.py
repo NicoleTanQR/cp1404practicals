@@ -1,7 +1,7 @@
 """
 Kivy Demo
 Estimate: 80 minutes
-Actual:    minutes
+Actual:   30 minutes
 """
 
 from kivy.app import App
