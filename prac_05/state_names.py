@@ -7,7 +7,7 @@ File needs reformatting
 CODE_TO_NAME = {"QLD": "Queensland", "NSW": "New South Wales",
                 "NT": "Northern Territory", "WA": "Western Australia",
                 "ACT": "Australian Capital Territory", "VIC": "Victoria",
-                "TAS": "Tasmania"}
+                "TAS": "Tasmania", "SA": "South Australia"}
 print(CODE_TO_NAME)
 
 is_valid_input = False
