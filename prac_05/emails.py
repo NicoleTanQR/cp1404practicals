@@ -17,8 +17,7 @@ def main():
         email_to_name[email] = name
         email = input("Email: ")
     print()
-    for email, name in email_to_name.items():
-        print(f"{name} ({email})")
+    print_user_information(email_to_name)
 
 
 def get_name(email):
@@ -26,6 +25,12 @@ def get_name(email):
     name = " ".join((name_part.title() for name_part in
                      email[:email.find("@")].split(".")))
     return name
+
+
+def print_user_information(email_to_name):
+    """Print names and emails based on dictionary."""
+    for email, name in email_to_name.items():
+        print(f"{name} ({email})")
 
 
 main()
