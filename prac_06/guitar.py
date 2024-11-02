@@ -4,7 +4,7 @@ Estimated work duration: 30 min
 Current time: 3:27 a.m.
 Actual work duration: 35 min (before testing)
 """
-CURRENT_YEAR = 2024
+CURRENT_YEAR = 2022
 VINTAGE_AGE = 50
 
 
