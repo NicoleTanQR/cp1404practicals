@@ -2,7 +2,7 @@
 Guitars! - Testing
 Estimated work duration: 30 min
 Current time: 12:52 p.m.
-Actual work duration:
+Actual work duration: 22 min
 """
 
 from prac_06.guitar import Guitar
