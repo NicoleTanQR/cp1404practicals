@@ -35,7 +35,8 @@ def main():
             filename = input("Filename: ")
             projects = load_projects(filename)
         elif choice == "S":
-            pass
+            filename = input("Filename: ")
+            save_projects(filename, projects)
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
@@ -68,6 +69,18 @@ def load_projects(filename):
     in_file.close()
     print(f"Loaded {len(projects)} projects from {filename}")
     return projects
+
+
+def save_projects(filename, projects):
+    """Overwrite file contents with updated projects."""
+    with open(filename, 'w') as out_file:
+        out_file.write("Name\tStart Date\tPriority\tCost Estimate\t"
+                       "Completion Percentage\n")
+        for project in projects:
+            out_file.write(f"{project.name}\t"
+                           f"{project.date.strftime('%d/%m/%Y')}\t"
+                           f"{project.priority}\t{project.cost}\t"
+                           f"{project.completion}\n")
 
 
 def display_projects(projects):
