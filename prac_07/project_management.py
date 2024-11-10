@@ -144,12 +144,24 @@ def update_project(projects):
         try:
             project_chosen = projects[int(project_chosen_number)]
             print(project_chosen)
-            project_chosen.completion = int(input("New Percentage: "))
-            project_chosen.priority = int(input("New Priority: "))
+            project_chosen.completion = get_integer("New Percentage: ",
+                                                    project_chosen.completion)
+            project_chosen.priority = get_integer("New Priority: ",
+                                                  project_chosen.priority)
         except ValueError:
             print("Invalid integer")
         except IndexError:
             print("Invalid project number")
+
+
+def get_integer(prompt, existing_value):
+    """Return integer, with blank returning existing value."""
+    value_string = input(prompt)
+    if value_string == "":
+        number = existing_value
+    else:
+        number = int(value_string)
+    return number
 
 
 main()
