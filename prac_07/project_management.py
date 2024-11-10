@@ -49,7 +49,11 @@ def main():
             print("Invalid menu choice")
         print(MENU)
         choice = input(">>> ").upper()
-    pass
+    save_confirmation = input(
+        f"Would you like to save to {filename}? ").upper()
+    if save_confirmation in "YES":
+        save_projects(filename, projects)
+    print("Thank you for using custom-built project management software.")
 
 
 def load_projects(filename):
