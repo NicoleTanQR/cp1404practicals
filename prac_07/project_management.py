@@ -5,6 +5,7 @@ Current time: 6:31 a.m.
 """
 
 import datetime
+from operator import attrgetter
 
 from prac_07.project import Project
 
@@ -38,7 +39,7 @@ def main():
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
-            pass
+            filter_projects(projects)
         elif choice == "A":
             add_project(projects)
         elif choice == "U":
@@ -87,6 +88,16 @@ def print_group(group_string, projects):
     print(f"{group_string} projects:")
     for project in projects:
         print(f"  {project}")
+
+
+def filter_projects(projects):
+    """Filter projects by date based on user input."""
+    date_string = input("Show projects that start after date (d/m/yyyy): ")
+    date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    projects.sort(key=attrgetter("date"))
+    for project in projects:
+        if project.date >= date:
+            print(project)
 
 
 def add_project(projects):
