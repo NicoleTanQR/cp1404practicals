@@ -55,18 +55,17 @@ def main():
 def load_projects(filename):
     """Load projects from filename."""
     projects = []
-    in_file = open(filename)
-    in_file.readline()
-    for line in in_file:
-        parts = line.strip().split()
-        name = " ".join(parts[:INDEX_DATE])
-        date = parts[INDEX_DATE]
-        priority = int(parts[INDEX_PRIORITY])
-        cost = float(parts[INDEX_COST])
-        completion = int(parts[INDEX_COMPLETION])
-        project = Project(name, date, priority, cost, completion)
-        projects.append(project)
-    in_file.close()
+    with open(filename) as in_file:
+        in_file.readline()
+        for line in in_file:
+            parts = line.strip().split()
+            name = " ".join(parts[:INDEX_DATE])
+            date = parts[INDEX_DATE]
+            priority = int(parts[INDEX_PRIORITY])
+            cost = float(parts[INDEX_COST])
+            completion = int(parts[INDEX_COMPLETION])
+            project = Project(name, date, priority, cost, completion)
+            projects.append(project)
     print(f"Loaded {len(projects)} projects from {filename}")
     return projects
 
