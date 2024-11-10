@@ -110,11 +110,14 @@ def print_group(group_string, projects):
 def filter_projects(projects):
     """Filter projects by date based on user input."""
     date_string = input("Show projects that start after date (d/m/yyyy): ")
-    date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
-    projects = sorted(projects, key=attrgetter("date"))
-    for project in projects:
-        if project.date >= date:
-            print(project)
+    try:
+        date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+        projects = sorted(projects, key=attrgetter("date"))
+        for project in projects:
+            if project.date >= date:
+                print(project)
+    except ValueError:
+        print("Invalid date format")
 
 
 def add_project(projects):
