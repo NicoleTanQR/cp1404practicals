@@ -70,7 +70,7 @@ def load_projects(filename):
 
 def display_projects(projects):
     """Display all projects sorted by completion and priority."""
-    projects.sort()
+    projects = sorted(projects)
     incomplete_projects = []
     completed_projects = []
     for project in projects:
