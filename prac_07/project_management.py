@@ -88,7 +88,7 @@ def save_projects(filename, projects):
 
 def display_projects(projects):
     """Display all projects sorted by completion and priority."""
-    projects = sorted(projects, key=attrgetter("priority"))
+    projects = sorted(projects)
     incomplete_projects = []
     completed_projects = []
     for project in projects:

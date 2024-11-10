@@ -23,3 +23,7 @@ class Project:
         return (f"{self.name}, start: {self.date.strftime('%d/%m/%Y')}, "
                 f"priority {self.priority}, estimate: ${self.cost:.2f}, "
                 f"completion: {self.completion}%")
+
+    def __lt__(self, other):
+        """Sort projects by priority with less than."""
+        return self.priority < other.priority
