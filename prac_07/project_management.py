@@ -14,8 +14,7 @@ MENU = """- (L)oad projects
 - (F)ilter projects by date
 - (A)dd new project  
 - (U)pdate project
-- (Q)uit
-"""
+- (Q)uit"""
 INDEX_DATE = -4
 INDEX_PRIORITY = -3
 INDEX_COST = -2
