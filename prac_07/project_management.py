@@ -84,7 +84,7 @@ def save_projects(filename, projects):
 
 def display_projects(projects):
     """Display all projects sorted by completion and priority."""
-    projects = sorted(projects)
+    projects = sorted(projects, key=attrgetter("priority"))
     incomplete_projects = []
     completed_projects = []
     for project in projects:
@@ -107,7 +107,7 @@ def filter_projects(projects):
     """Filter projects by date based on user input."""
     date_string = input("Show projects that start after date (d/m/yyyy): ")
     date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
-    projects.sort(key=attrgetter("date"))
+    projects = sorted(projects, key=attrgetter("date"))
     for project in projects:
         if project.date >= date:
             print(project)
