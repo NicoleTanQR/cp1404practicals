@@ -40,7 +40,7 @@ def main():
         elif choice == "F":
             pass
         elif choice == "A":
-            pass
+            add_project(projects)
         elif choice == "U":
             update_project(projects)
         else:
@@ -87,6 +87,18 @@ def print_group(group_string, projects):
     print(f"{group_string} projects:")
     for project in projects:
         print(f"  {project}")
+
+
+def add_project(projects):
+    """Add a new project."""
+    print("Let's add a new project")
+    name = input("Name: ")
+    date = input("Start date (dd/mm/yy): ")
+    priority = int(input("Priority: "))
+    cost = float(input("Cost estimate: $"))
+    completion = int(input("Percent complete: "))
+    project = Project(name, date, priority, cost, completion)
+    projects.append(project)
 
 
 def update_project(projects):
