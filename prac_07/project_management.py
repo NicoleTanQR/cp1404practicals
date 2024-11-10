@@ -20,7 +20,6 @@ INDEX_DATE = -4
 INDEX_PRIORITY = -3
 INDEX_COST = -2
 INDEX_COMPLETION = -1
-MAXIMUM_PERCENTAGE = 100
 
 
 def main():
@@ -92,7 +91,7 @@ def display_projects(projects):
     incomplete_projects = []
     completed_projects = []
     for project in projects:
-        if project.completion < MAXIMUM_PERCENTAGE:
+        if project.is_incomplete():
             incomplete_projects.append(project)
         else:
             completed_projects.append(project)

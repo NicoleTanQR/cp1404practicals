@@ -6,6 +6,8 @@ Current time: 6:31 a.m.
 
 import datetime
 
+MAXIMUM_PERCENTAGE = 100
+
 
 class Project:
     """Represent a Project object."""
@@ -27,3 +29,7 @@ class Project:
     def __lt__(self, other):
         """Sort projects by priority with less than."""
         return self.priority < other.priority
+
+    def is_incomplete(self):
+        """Return True or False based on completion."""
+        return self.completion < MAXIMUM_PERCENTAGE
