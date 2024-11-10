@@ -121,12 +121,15 @@ def add_project(projects):
     """Add a new project."""
     print("Let's add a new project")
     name = input("Name: ")
-    date = input("Start date (dd/mm/yy): ")
-    priority = int(input("Priority: "))
-    cost = float(input("Cost estimate: $"))
-    completion = int(input("Percent complete: "))
-    project = Project(name, date, priority, cost, completion)
-    projects.append(project)
+    try:
+        date = input("Start date (dd/mm/yy): ")
+        priority = int(input("Priority: "))
+        cost = float(input("Cost estimate: $"))
+        completion = int(input("Percent complete: "))
+        project = Project(name, date, priority, cost, completion)
+        projects.append(project)
+    except ValueError:
+        print("At least one invalid input")
 
 
 def update_project(projects):
