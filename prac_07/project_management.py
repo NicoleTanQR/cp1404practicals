@@ -25,15 +25,15 @@ MAXIMUM_PERCENTAGE = 100
 
 def main():
     """Load and save project details, use project objects."""
+    print(f"Welcome to Pythonic Project Management")
     filename = "projects.txt"
     projects = load_projects(filename)
-    print(f"Welcome to Pythonic Project Management\nLoaded {len(projects)} "
-          f"projects from {filename}")
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "L":
-            pass
+            filename = input("Filename: ")
+            projects = load_projects(filename)
         elif choice == "S":
             pass
         elif choice == "D":
@@ -66,6 +66,7 @@ def load_projects(filename):
         project = Project(name, date, priority, cost, completion)
         projects.append(project)
     in_file.close()
+    print(f"Loaded {len(projects)} projects from {filename}")
     return projects
 
 
