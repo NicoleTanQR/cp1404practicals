@@ -19,4 +19,9 @@ class Project:
     def __str__(self):
         """Display data for a project."""
         return (f"{self.name}, start: {self.date}, priority {self.priority}, "
-                f"estimate: ${self.cost:,.2f}, completion: {self.completion}%")
+                f"estimate: ${self.cost:.2f}, completion: {self.completion}%")
+
+    def __lt__(self, other):
+        """Sort projects by priority with less than."""
+        return self.priority < other.priority
+
