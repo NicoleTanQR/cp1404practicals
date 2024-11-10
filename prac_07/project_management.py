@@ -133,11 +133,17 @@ def update_project(projects):
     """Modify completion percentage, priority of a project."""
     for i, project in enumerate(projects):
         print(i, project)
-    project_chosen_number = int(input("Project choice: "))
-    project_chosen = projects[project_chosen_number]
-    print(project_chosen)
-    project_chosen.completion = int(input("New Percentage: "))
-    project_chosen.priority = int(input("New Priority: "))
+    project_chosen_number = input("Project choice: ")
+    if project_chosen_number != "":
+        try:
+            project_chosen = projects[int(project_chosen_number)]
+            print(project_chosen)
+            project_chosen.completion = int(input("New Percentage: "))
+            project_chosen.priority = int(input("New Priority: "))
+        except ValueError:
+            print("Invalid integer")
+        except IndexError:
+            print("Invalid project number")
 
 
 main()
