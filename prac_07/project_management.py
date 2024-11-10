@@ -43,7 +43,7 @@ def main():
         elif choice == "A":
             pass
         elif choice == "U":
-            pass
+            update_project(projects)
         else:
             print("Invalid menu choice")
         print(MENU)
@@ -88,6 +88,17 @@ def print_group(group_string, projects):
     print(f"{group_string} projects:")
     for project in projects:
         print(f"  {project}")
+
+
+def update_project(projects):
+    """Modify completion percentage, priority of a project."""
+    for i, project in enumerate(projects):
+        print(i, project)
+    project_chosen_number = int(input("Project choice: "))
+    project_chosen = projects[project_chosen_number]
+    print(project_chosen)
+    project_chosen.completion = int(input("New Percentage: "))
+    project_chosen.priority = int(input("New Priority: "))
 
 
 main()
