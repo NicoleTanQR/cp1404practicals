@@ -5,7 +5,7 @@ from kivy.lang import Builder
 
 
 class BoxLayoutDemo(App):
-    """Demo modifying box layout."""
+    """Display greeting based on input, clear input and greeting."""
 
     def build(self):
         """Set up and return the main widget."""
