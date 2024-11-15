@@ -2,7 +2,7 @@
 Project Management Program - Client code
 Estimated work duration for both class & client code: 3 hours
 Current time: 6:31 a.m.
-Actual work duration: ~12 hours
+Actual work duration for both class & client code: ~12 hours
 """
 
 import datetime
