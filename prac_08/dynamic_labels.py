@@ -6,6 +6,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.label import Label
 
+FILENAME = "dynamic_labels.kv"
 NAMES = ["Alex", "Taylor", "Jordan", "Casey", "Keiko"]
 MINIMUM_NUMBER = 0
 MAXIMUM_NUMBER = 100
@@ -22,7 +23,7 @@ class DynamicLabelsApp(App):
     def build(self):
         """Build the Kivy GUI."""
         self.title = "Dynamic Labels"
-        self.root = Builder.load_file('dynamic_labels.kv')
+        self.root = Builder.load_file(FILENAME)
         self.create_labels()
         return self.root
 

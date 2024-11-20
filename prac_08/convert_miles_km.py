@@ -4,6 +4,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
+FILENAME = "convert_miles_km.kv"
 ONE_MILE_IN_KILOMETRES = 1.60934
 
 
@@ -14,7 +15,7 @@ class MilesConverterApp(App):
     def build(self):
         """Set up and return the main widget."""
         self.title = "Convert Miles to Kilometres"
-        self.root = Builder.load_file('convert_miles_km.kv')
+        self.root = Builder.load_file(FILENAME)
         return self.root
 
     def handle_convert(self, text):
