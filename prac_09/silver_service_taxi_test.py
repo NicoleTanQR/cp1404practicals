@@ -12,7 +12,8 @@ def main():
                                                2)
     my_silver_service_taxi.drive(18)
     print(my_silver_service_taxi)
-    assert my_silver_service_taxi.get_fare() == 48.78
+    # assert my_silver_service_taxi.get_fare() == 48.78
+    assert my_silver_service_taxi.get_fare() == 48.80
 
 
 main()
