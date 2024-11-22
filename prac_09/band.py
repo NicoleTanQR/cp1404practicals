@@ -1,7 +1,5 @@
 """Band class"""
 
-from musician import Musician
-
 
 class Band:
     """Represent a Band object."""
@@ -21,5 +19,5 @@ class Band:
         self.members.append(member)
 
     def play(self):
-        """Return a string showing the member playing their first (or no) instrument."""
+        """Return string on member playing first or no instrument."""
         return "\n".join(member.play() for member in self.members)
