@@ -10,15 +10,16 @@ def main():
     """Drive taxi based on input and display costs."""
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2),
              SilverServiceTaxi("Hummer", 200, 4)]
+    current_taxi = None
     total_cost = 0.0
     print("Let's drive!")
     print(MENU)
     choice = input(">>> ").lower()
     while choice != "q":
         if choice == "c":
-            choose_taxi(taxis, total_cost)
+            current_taxi = choose_taxi(taxis)
         elif choice == "d":
-            pass
+            total_cost = handle_trip(current_taxi, total_cost)
         else:
             print("Invalid option")
         print(f"Bill to date: ${total_cost:.2f}")
@@ -27,21 +28,29 @@ def main():
     pass
 
 
-def choose_taxi(taxis, total_cost):
+def choose_taxi(taxis):
     """Let user choose from list of available taxis."""
     print("Taxis available:")
     display_taxis(taxis)
     taxi_number = int(input("Choose taxi: "))
     taxi = taxis[taxi_number]
-    taxi.drive(0)
-    trip_cost = taxi.get_fare()
-    total_cost += trip_cost
+    return taxi
 
 
 def display_taxis(taxis):
     """Display taxis stored."""
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
+
+
+def handle_trip(taxi, total_cost):
+    """Handle one taxi trip."""
+    distance = int(input("Drive how far? "))
+    taxi.drive(distance)
+    trip_cost = taxi.get_fare()
+    print(f"Your {taxi.name} trip will cost you ${trip_cost:.2f}")
+    total_cost += trip_cost
+    return total_cost
 
 
 main()
